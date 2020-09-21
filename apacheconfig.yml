@@ -18,6 +18,11 @@
         src: index.html.j2
         dest: /var/www/html/index.html
 
+    - name: copy sample.html
+      copy:
+        src: sample.html
+        dest: /var/www/html/sample.html
+
     - name: allow http and https in firewalld
       firewalld:
         service: "{{ item }}"
