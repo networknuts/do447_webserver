@@ -23,6 +23,11 @@
         src: sample.html
         dest: /var/www/html/sample.html
 
+    - name: copy new.html
+      copy:
+        src: new.html
+        dest: /var/www/html/new.html
+
     - name: allow http and https in firewalld
       firewalld:
         service: "{{ item }}"
