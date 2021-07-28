@@ -1,0 +1,8 @@
+---
+- name: gather all facts
+  hosts: all
+  gather_facts: true
+  tasks:
+   - name: display success
+     debug:
+       msg: "GATHERING FACTS DONE"
