@@ -1,6 +1,7 @@
 ---
 - name: config apache server
   hosts: all
+  gather_facts: false
   tasks:
     - name: install httpd
       yum:
