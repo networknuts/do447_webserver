@@ -1,7 +1,7 @@
 ---
 - name: config apache server
   hosts: all
-  gather_facts: false
+  gather_facts: true
   tasks:
     - name: install httpd
       yum:
@@ -23,13 +23,3 @@
       copy:
         src: sample.html
         dest: /var/www/html/sample.html
-
-    - name: allow http and https in firewalld
-      firewalld:
-        service: "{{ item }}"
-        immediate: true
-        permanent: true
-        state: enabled
-      loop:
-        - http
-        - https
